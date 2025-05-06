@@ -15,7 +15,7 @@
         <h3 class="mt-1">OWNER@vento-app.ph</h3>
         <nav class="mt-10">
             <a href="#" class="block py-2 px-4 bg-yellow-500 rounded mb-2">POS</a>
-            <a href="#" class="block py-2 px-4 hover:bg-yellow-500 rounded mb-2">Sales</a>
+            <a href="{{ route('sales') }}" class="block py-2 px-4 hover:bg-yellow-500 rounded mb-2">Sales</a>
             <a href="{{ route('index') }}" class="block py-2 px-4 hover:bg-yellow-500 rounded mb-2">Inventory</a>
         </nav>
         <button onclick="history.back()">Back</button>
@@ -39,7 +39,7 @@
             <p class="text-gray-600">{{ $product->name }}</p>
 
             {{-- Add to cart form --}}
-            <form method="POST" action="{{ route('cart.add', $product->id) }}">
+            <form method="POST" action="{{ route('cart.add', $product->product_id) }}">
                 @csrf
                 <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded mt-2">
                     Add to cart

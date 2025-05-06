@@ -22,7 +22,7 @@ class SalesController extends Controller
             $query->whereDate('created_at', today());
         }])->get();
 
-        return view('sales.sales', [
+        return view('sales', [
             'sales' => $sales,
             'products' => $products,
             'totalProductsSold' => $totalProductsSold,
@@ -54,7 +54,7 @@ class SalesController extends Controller
         $sale = Sale::findOrFail($id);
         $sale->update($request->all());
 
-        return redirect()->route('sales.sales')->with('success', 'Sale updated successfully.');
+        return redirect()->route('sales')->with('success', 'Sale updated successfully.');
     }
 
     /**

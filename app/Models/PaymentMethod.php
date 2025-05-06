@@ -14,10 +14,17 @@ class PaymentMethod extends Model
      *
      * @var array<int, string>
      */
+    protected $table = 'payment_method';  // Specify the table name
+
     protected $fillable = [
-        // Add any fields that should be mass assignable for your payment method
-        'name', // e.g., 'Cash', 'Credit Card', 'PayPal'
-        // Add other payment method-related fields as necessary
+        'sales_report_id',
+        'payee_method',
+        'emailed_username',
+        'card_number',
+        'card_expiration_date',
+        'card_cvv',
+        'amount_paid',
+        'cash_change',
     ];
 
     // You might not need $casts for a simple payment method model
